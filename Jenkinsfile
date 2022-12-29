@@ -5,7 +5,7 @@ pipeline {
         stage ('Bild Image') {
             steps {
                 script {
-                    dockerapp = docker.build("jaksonreis/api-produto", '-f ./src/Dockerfile ./src')
+                    dockerapp = docker.build("jaksonreis/api-produto:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
                 }
                 echo "Iniciando a Pipeline"            
             }
